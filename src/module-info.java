@@ -1,9 +1,3 @@
-/**
- * 
- */
-/**
- * @author theomoura
- *
- */
 module atividadePOO {
+    requires java.desktop;
 }

@@ -1,10 +1,13 @@
 package br.gov.cesarschool.poo.bonusvendas.model;
 
+import java.time.LocalDate;
+import java.time.Period;
+
 public class Vendedor {
     private String cpf;
     private String nomeCompleto;
     private String sexo;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
     private double renda;
     private String logradouro;
     private String numero;
@@ -12,7 +15,7 @@ public class Vendedor {
     private String cep;
     private String cidade;
 
-    public Vendedor(String cpf, String nomeCompleto, String sexo, String dataNascimento, double renda, String logradouro, String numero, String complemento, String cep, String cidade) {
+    public Vendedor(String cpf, String nomeCompleto, String sexo, LocalDate dataNascimento, double renda, String logradouro, String numero, String complemento, String cep, String cidade) {
         this.cpf = cpf;
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
@@ -53,11 +56,11 @@ public class Vendedor {
 		this.sexo = sexo;
 	}
 
-	public String getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(String dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -108,5 +111,10 @@ public class Vendedor {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+	 public int calcularIdade() {
+	        LocalDate dataAtual = LocalDate.now();
+	        Period periodo = Period.between(dataNascimento, dataAtual);
+	        return periodo.getYears();
+	    }
 
 }

@@ -45,11 +45,8 @@ public class CaixaDeBonus {
 		
 	}
 	void debitar(double valor){
-		 if (valor <= this.saldo) {
-	            this.saldo -= valor;
-	            this.dataHoraAtualizacao = LocalDateTime.now();
-	        } else {
-	        	 System.out.println("Saldo insuficiente para debitar " + valor);
-	        }
+	    this.saldo -= valor;
+	    this.dataHoraAtualizacao = LocalDateTime.now();
+	        
 	}
 }

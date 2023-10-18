@@ -2,21 +2,25 @@ package br.gov.cesarschool.poo.bonusvendas.entidade;
 
 import java.time.LocalDate;
 import java.time.Period;
+import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Sexo;
+import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Endereco;
 
 public class Vendedor {
     private String cpf;
     private String nomeCompleto;
-    private String sexo;
+    private Sexo sexo;
     private LocalDate dataNascimento;
     private double renda;
+    private Endereco endereco;
    
 
-    public Vendedor(String cpf, String nomeCompleto, String sexo, LocalDate dataNascimento, double renda) {
+    public Vendedor(String cpf, String nomeCompleto, Sexo sexo, LocalDate dataNascimento, double renda, Endereco endereco) {
         this.cpf = cpf;
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
         this.renda = renda;
+        this.setEndereco(endereco);
        
     }
     
@@ -40,11 +44,11 @@ public class Vendedor {
 		this.nomeCompleto = nomeCompleto;
 	}
 
-	public String getSexo() {
+	public Sexo getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(String sexo) {
+	public void setSexo(Sexo sexo) {
 		this.sexo = sexo;
 	}
 
@@ -69,5 +73,13 @@ public class Vendedor {
 	        Period periodo = Period.between(dataNascimento, dataAtual);
 	        return periodo.getYears();
 	    }
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 
 }

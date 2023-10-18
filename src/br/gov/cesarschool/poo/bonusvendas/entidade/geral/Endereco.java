@@ -8,11 +8,11 @@ public class Endereco {
 	    private String cidade;
 	    
 	    public Endereco(String logradouro, String numero, String complemento, String cep, String cidade) {
-	        this.setLogradouro(logradouro);
-	        this.setNumero(numero);
-	        this.setComplemento(complemento);
-	        this.setCep(cep);
-	        this.setCidade(cidade);
+	        this.logradouro =logradouro;
+	        this.numero = numero;
+	        this.complemento = complemento;
+	        this.cep = cep;
+	        this.cidade = cidade;
 	    }
 
 		public String getLogradouro() {

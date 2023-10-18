@@ -20,7 +20,7 @@ public class Vendedor {
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
         this.renda = renda;
-        this.setEndereco(endereco);
+        this.endereco = endereco;
        
     }
     

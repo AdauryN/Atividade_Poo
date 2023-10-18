@@ -9,23 +9,15 @@ public class Vendedor {
     private String sexo;
     private LocalDate dataNascimento;
     private double renda;
-    private String logradouro;
-    private String numero;
-    private String complemento;
-    private String cep;
-    private String cidade;
+   
 
-    public Vendedor(String cpf, String nomeCompleto, String sexo, LocalDate dataNascimento, double renda, String logradouro, String numero, String complemento, String cep, String cidade) {
+    public Vendedor(String cpf, String nomeCompleto, String sexo, LocalDate dataNascimento, double renda) {
         this.cpf = cpf;
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
         this.renda = renda;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.cep = cep;
-        this.cidade = cidade;
+       
     }
     
     public Vendedor() {

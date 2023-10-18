@@ -1,7 +1,8 @@
 package br.gov.cesarschool.poo.bonusvendas.mediator;
 
 import br.gov.cesarschool.poo.bonusvendas.dao.VendedorDAO;
-import br.gov.cesarschool.poo.bonusvendas.model.Vendedor;
+
+import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 
 public class VendedorMediator {
 
@@ -23,7 +24,7 @@ public class VendedorMediator {
         Vendedor vendedor = new Vendedor();
         vendedor.setCPF(cpf);
         vendedor.setNomeCompleto(nomeCompleto);
-        vendedorDAO.inserir(vendedor);
+        vendedorDAO.incluir(vendedor);
     }
 
 }

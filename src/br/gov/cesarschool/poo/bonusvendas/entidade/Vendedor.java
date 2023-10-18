@@ -1,4 +1,4 @@
-package br.gov.cesarschool.poo.bonusvendas.model;
+package br.gov.cesarschool.poo.bonusvendas.entidade;
 
 import java.time.LocalDate;
 import java.time.Period;

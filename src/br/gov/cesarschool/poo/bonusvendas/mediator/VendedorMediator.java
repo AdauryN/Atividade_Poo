@@ -1,7 +1,7 @@
 package br.gov.cesarschool.poo.bonusvendas.mediator;
 
+import br.gov.cesarschool.poo.bonusvendas.dao.VendedorDAO;
 import br.gov.cesarschool.poo.bonusvendas.model.Vendedor;
-import br.gov.cesarschool.poo.bonusvendas.DAO.VendedorDAO;
 
 public class VendedorMediator {
 

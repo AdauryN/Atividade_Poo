@@ -2,20 +2,21 @@ package br.gov.cesarschool.poo.bonusvendas.entidade.geral;
 
 public class Endereco {
 	 private String logradouro;
-	    private String numero;
+	    private int numero;
 	    private String complemento;
 	    private String cep;
 	    private String cidade;
 	    private String estado;
 	    private String pais;
 	    
-	    public Endereco(String logradouro, String numero, String complemento, String cep, String cidade, String estado) {
+	    public Endereco(String logradouro, int numero, String complemento, String cep, String cidade, String estado, String pais) {
 	        this.logradouro = logradouro;
 	        this.numero = numero;
 	        this.complemento = complemento;
 	        this.cep = cep;
 	        this.cidade = cidade;
 	        this.estado = estado;
+	        this.pais = pais;
 	    }
 
 
@@ -27,11 +28,11 @@ public class Endereco {
 			this.logradouro = logradouro;
 		}
 
-		public String getNumero() {
+		public int getNumero() {
 			return numero;
 		}
 
-		public void setNumero(String numero) {
+		public void setNumero(int numero) {
 			this.numero = numero;
 		}
 

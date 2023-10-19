@@ -28,10 +28,14 @@ public class AcumuloResgateMediator {
     }
 
     public String acumularBonus(long numeroCaixaDeBonus, double valor) {
+        if (valor <= 0) {
+            return "Valor menor ou igual a zero";
+        }
         LancamentoBonus lancamento = new LancamentoBonus(numeroCaixaDeBonus, valor);
         lancamentoBonusDAO.incluir(lancamento);
         return "Acumulado com sucesso: " + valor;
     }
+
 
     public String resgatar(long numeroCaixaDeBonus, double valor, TipoResgate tipo) {
         LancamentoBonus lancamento;

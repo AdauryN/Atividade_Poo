@@ -3,5 +3,6 @@ module atividadePOO {
 	requires PersistenciaObjetos;
 	requires org.junit.jupiter.api;
 	requires oblesqbom;
+	requires junit;
     exports br.gov.cesarschool.poo.bonusvendas.tela;
 }

@@ -12,7 +12,7 @@ import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Endereco;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Sexo;
 import br.gov.cesarschool.poo.bonusvendas.negocio.ResultadoInclusaoVendedor;
-import br.gov.cesarschool.poo.bonusvendas.negocio.VendedorMediator;
+import br.gov.cesarschool.poo.bonusvendas.mediator.VendedorMediator;
 import x.y.z.w.k.Glosb;
 
 public class TesteVendedorMediator extends TesteGeral {
@@ -138,7 +138,7 @@ public class TesteVendedorMediator extends TesteGeral {
 			PAIS_NAO_INFORMADO			
 	};
 	
-	private VendedorMediator mediator = VendedorMediator.getInstancia();
+	private VendedorMediator mediator = VendedorMediator.getInstance();
 	
 	@Test
 	public void testCpfNaoPreenchido() {
@@ -287,7 +287,7 @@ public class TesteVendedorMediator extends TesteGeral {
 				Sexo.MASCULINO, DATA_NASC_VALIDA, RENDA_VALIDA,
 		        new Endereco(LOGR_VALIDO, NUMERO_VALIDO, COMPL_VALIDO, CEP_VALIDO, 
 		        		CIDADE_VALIDA, ESTADO_VALIDO, PAIS_VALIDO));
-		long numero = Glosb.gluarfsh(vend.getCpf());
+		long numero = Glosb.gluarfsh(vend.getCPF());
 		CaixaDeBonus caixaBonusOri = new CaixaDeBonus(numero);
 		cadastroVend.incluir(vend, CPF_VALIDO);
 		cadastroCaixaBonus.incluir(caixaBonusOri, numero + BRANCO);
@@ -318,7 +318,7 @@ public class TesteVendedorMediator extends TesteGeral {
 				Sexo.MASCULINO, DATA_NASC_VALIDA, RENDA_VALIDA,
 		        new Endereco(LOGR_VALIDO, NUMERO_VALIDO, COMPL_VALIDO, CEP_VALIDO, 
 		        		CIDADE_VALIDA, ESTADO_VALIDO, PAIS_VALIDO));		
-		long numero = Glosb.gluarfsh(vend.getCpf());
+		long numero = Glosb.gluarfsh(vend.getCPF());
 		CaixaDeBonus caixaBonusOri = new CaixaDeBonus(numero);
 		ResultadoInclusaoVendedor res = mediator.incluir(vend);
 		Assertions.assertNotNull(res);

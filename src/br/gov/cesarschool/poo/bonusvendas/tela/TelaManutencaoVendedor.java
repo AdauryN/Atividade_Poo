@@ -145,14 +145,15 @@ public class TelaManutencaoVendedor extends JFrame {
 		        LocalDate dataNascimento = LocalDate.parse(txtDataNascimento.getText());
 		        double renda = Double.parseDouble(txtRenda.getText());
 		        String logradouro = txtLogradouro.getText();
-		        String numero = txtNumero.getText();
+		        int numero = Integer.parseInt(txtNumero.getText());
 		        String complemento = txtComplemento.getText();
 		        String cep = txtCEP.getText();
 		        String cidade = txtCidade.getText();
 		        String estado = cbEstado.getSelectedItem().toString();
+		        String pais = "Brasil";
 		        
 
-		        mediator.cadastrarVendedor(cpf, nomeCompleto, sexo, dataNascimento, renda, logradouro, numero, complemento, cep, cidade, estado);
+		        mediator.cadastrarVendedor(cpf, nomeCompleto, sexo, dataNascimento, renda, logradouro, numero, complemento, cep, cidade, estado, pais);
 		    }
 		});
 

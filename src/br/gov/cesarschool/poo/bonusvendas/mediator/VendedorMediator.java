@@ -25,10 +25,10 @@ public class VendedorMediator {
 
     public void cadastrarVendedor(
             String cpf, String nomeCompleto, Sexo sexo, LocalDate dataNascimento, 
-            double renda, String logradouro, String numero, String complemento, 
-            String cep, String cidade, String estado) {
+            double renda, String logradouro, int numero, String complemento, 
+            String cep, String cidade, String estado, String pais) {
 
-        Endereco endereco = new Endereco(logradouro, numero, complemento, cep, cidade, estado);
+        Endereco endereco = new Endereco(logradouro, numero, complemento, cep, cidade, estado, pais);
         Vendedor vendedor = new Vendedor(cpf, nomeCompleto, sexo, dataNascimento, renda, endereco);
         vendedorDAO.incluir(vendedor);
     }

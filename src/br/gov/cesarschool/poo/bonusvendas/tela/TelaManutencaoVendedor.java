@@ -12,8 +12,10 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import br.gov.cesarschool.poo.bonusvendas.mediator.VendedorMediator;
+
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Sexo;
+import br.gov.cesarschool.poo.bonusvendas.negocio.VendedorMediator;
+
 import java.time.LocalDate;
 
 

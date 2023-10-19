@@ -1,4 +1,4 @@
-package br.gov.cesarschool.poo.bonusvendas.mediator;
+package br.gov.cesarschool.poo.bonusvendas.negocio;
 
 import br.gov.cesarschool.poo.bonusvendas.dao.LancamentoBonusDAO;
 import br.gov.cesarschool.poo.bonusvendas.entidade.LancamentoBonus;

@@ -5,4 +5,5 @@ module atividadePOO {
 	requires oblesqbom;
 	requires junit;
     exports br.gov.cesarschool.poo.bonusvendas.tela;
+    exports br.gov.cesarschool.poo.bonusvendas.testes to junit;
 }

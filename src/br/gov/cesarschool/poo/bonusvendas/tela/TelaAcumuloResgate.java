@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import br.gov.cesarschool.poo.bonusvendas.negocio.AcumuloResgateMediator;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
@@ -12,7 +15,6 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
-import br.gov.cesarschool.poo.bonusvendas.mediator.AcumuloResgateMediator;
 
 public class TelaAcumuloResgate extends JFrame {
 

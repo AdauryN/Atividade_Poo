@@ -14,7 +14,7 @@ import br.gov.cesarschool.poo.bonusvendas.entidade.TipoResgate;
 import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Endereco;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Sexo;
-import br.gov.cesarschool.poo.bonusvendas.mediator.AcumuloResgateMediator;
+import br.gov.cesarschool.poo.bonusvendas.negocio.AcumuloResgateMediator;
 import x.y.z.w.k.Glosb;
 
 public class TesteAcumuloResgateMediator extends TesteGeral {

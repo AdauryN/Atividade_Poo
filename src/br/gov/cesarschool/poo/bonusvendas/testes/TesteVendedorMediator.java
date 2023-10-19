@@ -12,7 +12,7 @@ import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Endereco;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Sexo;
 import br.gov.cesarschool.poo.bonusvendas.negocio.ResultadoInclusaoVendedor;
-import br.gov.cesarschool.poo.bonusvendas.mediator.VendedorMediator;
+import br.gov.cesarschool.poo.bonusvendas.negocio.VendedorMediator;
 import x.y.z.w.k.Glosb;
 
 public class TesteVendedorMediator extends TesteGeral {
@@ -343,7 +343,7 @@ public class TesteVendedorMediator extends TesteGeral {
 				Sexo.MASCULINO, DATA_NASC_VALIDA, RENDA_VALIDA,
 		        new Endereco(LOGR_VALIDO, NUMERO_VALIDO, COMPL_VALIDO, CEP_VALIDO, 
 		        		CIDADE_VALIDA, ESTADO_VALIDO, PAIS_VALIDO));
-		long numero = Glosb.gluarfsh(vend.getCpf());
+		long numero = Glosb.gluarfsh(vend.getCPF());
 		CaixaDeBonus caixaBonusOri = new CaixaDeBonus(numero);
 		cadastroVend.incluir(vend, CPF_VALIDO);
 		cadastroCaixaBonus.incluir(caixaBonusOri, numero + BRANCO);
@@ -382,7 +382,7 @@ public class TesteVendedorMediator extends TesteGeral {
 				Sexo.MASCULINO, DATA_NASC_VALIDA, RENDA_VALIDA,
 		        new Endereco(LOGR_VALIDO, NUMERO_VALIDO, COMPL_VALIDO, CEP_VALIDO, 
 		        		CIDADE_VALIDA, ESTADO_VALIDO, PAIS_VALIDO));
-		long numero = Glosb.gluarfsh(vend.getCpf());
+		long numero = Glosb.gluarfsh(vend.getCPF());
 		CaixaDeBonus caixaBonusOri = new CaixaDeBonus(numero);
 		cadastroVend.incluir(vend, CPF_VALIDO);
 		cadastroCaixaBonus.incluir(caixaBonusOri, numero + BRANCO);
@@ -433,8 +433,8 @@ public class TesteVendedorMediator extends TesteGeral {
 	}
 	private void assertAlteracaoNaoRealizada(Vendedor vendOri, Vendedor vend, String msgErro) {
 		excluirVendedoresCaixasBonusLancamentos();
-		cadastroVend.incluir(vendOri, vendOri.getCpf());
-		long numero = Glosb.gluarfsh(vendOri.getCpf());
+		cadastroVend.incluir(vendOri, vendOri.getCPF());
+		long numero = Glosb.gluarfsh(vendOri.getCPF());
 		CaixaDeBonus caixaBonusOri = new CaixaDeBonus(numero);
 		cadastroCaixaBonus.incluir(caixaBonusOri, numero + BRANCO);
 		String msg = mediator.alterar(vend);
@@ -444,7 +444,7 @@ public class TesteVendedorMediator extends TesteGeral {
 		int qtdArqsCaixaDeBonus = obterQtdArquivosDir(DIR_CAIXA_DE_BONUS);
 		Assertions.assertEquals(1, qtdArqsVendedor);
 		Assertions.assertEquals(1, qtdArqsCaixaDeBonus);
-		Vendedor vendGravado = (Vendedor)cadastroVend.buscar(vendOri.getCpf());		
+		Vendedor vendGravado = (Vendedor)cadastroVend.buscar(vendOri.getCPF());		
 		Assertions.assertNotNull(vendGravado);
 		Assertions.assertTrue(ComparadoraObjetosSerial.compareObjectsSerial(vendOri, vendGravado));		
 		CaixaDeBonus caixaBonusGravada = (CaixaDeBonus)cadastroCaixaBonus.buscar(numero + BRANCO);

@@ -1,45 +1,49 @@
 package br.gov.cesarschool.poo.bonusvendas.dao;
 
 import java.io.Serializable;
-	
+
 import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
 import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 
 public class VendedorDAO {
-	private static final String BRANCO = "";
-	private CadastroObjetos cadastro = new CadastroObjetos(Vendedor.class);
 
-	public boolean incluir(Vendedor prod) {
-		Vendedor prodBusca = buscar(prod.getCPF());
-		if (prodBusca != null) {
-			return false;
-		} else {
-			cadastro.incluir(prod, BRANCO + prod.getCPF());
-			return true;
-		}
-	}
+    private CadastroObjetos cadastro = new CadastroObjetos(Vendedor.class);
 
-	public boolean alterar(Vendedor prod) {
-		Vendedor prodBusca = buscar(prod.getCPF());
-		if (prodBusca == null) {
-			return false;
-		} else {
-			cadastro.alterar(prod, BRANCO + prod.getCPF());
-			return true;
-		}
-	}
+    private String criarChave(String cpf) {
+        return cpf;
+    }
 
-	public Vendedor buscar(String string) {
-		
-		return (Vendedor) cadastro.buscar(BRANCO + string);
-	}
+    public boolean incluir(Vendedor vendedor) {
+        String chave = criarChave(vendedor.getCPF());
+        if (cadastro.buscar(chave) != null) {
+            return false;
+        } else {
+            cadastro.incluir(vendedor, chave);
+            return true;
+        }
+    }
 
-	public Vendedor[] buscarTodos() {
-		Serializable[] rets = cadastro.buscarTodos(Vendedor.class);
-		Vendedor[] prods = new Vendedor[rets.length];
-		for (int i = 0; i < rets.length; i++) {
-			prods[i] = (Vendedor) rets[i];
-		}
-		return prods;
-	}
+    public boolean alterar(Vendedor vendedor) {
+        String chave = criarChave(vendedor.getCPF());
+        if (cadastro.buscar(chave) == null) {
+            return false;
+        } else {
+            cadastro.alterar(vendedor, chave);
+            return true;
+        }
+    }
+
+    public Vendedor buscar(String cpf) {
+        String chave = criarChave(cpf);
+        return (Vendedor) cadastro.buscar(chave);
+    }
+
+    public Vendedor[] buscarTodos() {
+        Serializable[] registros = cadastro.buscarTodos(Vendedor.class);
+        Vendedor[] vendedores = new Vendedor[registros.length];
+        for (int i = 0; i < registros.length; i++) {
+            vendedores[i] = (Vendedor) registros[i];
+        }
+        return vendedores;
+    }
 }

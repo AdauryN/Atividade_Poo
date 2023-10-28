@@ -5,10 +5,18 @@ public class ResultadoInclusaoVendedor {
     private String mensagem;
     private String mensagemErroValidacao;
     private int numeroCaixaDeBonus;
+    private long numeroCaixaDeBonusl;
 
-    public ResultadoInclusaoVendedor(boolean sucesso, String mensagem) {
-        this.sucesso = sucesso;
-        this.mensagem = mensagem;
+    public ResultadoInclusaoVendedor(int numeroCaixaDeBonus, String mensagemErroValidacao) {
+        this.numeroCaixaDeBonus = numeroCaixaDeBonus;
+        this.mensagemErroValidacao = mensagemErroValidacao;
+        this.sucesso = (mensagemErroValidacao == null);
+    }
+    
+    public ResultadoInclusaoVendedor(long numeroCaixaDeBonusl, String mensagemErroValidacao) {
+        this.numeroCaixaDeBonusl = numeroCaixaDeBonusl;
+        this.mensagemErroValidacao = mensagemErroValidacao;
+        this.sucesso = (mensagemErroValidacao == null);
     }
 
     public boolean isSucesso() {
